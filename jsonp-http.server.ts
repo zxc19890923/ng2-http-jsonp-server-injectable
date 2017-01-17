@@ -38,3 +38,20 @@ export class HttpServer {
     httpServer.jsonpGet("http://localhost:3000/users", params).subscribe(res=> {
       console.log(res);
     });
+
+3. 注意，调取服务的方法有两种，全局，和局部组件
+app.module.ts
+import {HttpServer} from "./http.server.ts";
+...
+providers: [HttpServer]
+...
+要在组建中导入
+import {HttpServer} from "./http.server.ts";
+
+--------------------------------------------
+
+app.component.ts
+import {HttpServer} from "./http.server.ts";
+...
+providers: [HttpServer]
+...
